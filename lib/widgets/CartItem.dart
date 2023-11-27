@@ -14,7 +14,14 @@ class CartItem extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
         ),
+        child: Row(children: [
+          // Radio(
+          //   value: "",
+          //   activeColor: Colors.blue,
+          //   onChanged: (index){},
+          // )
+        ],),
       )
     ],);
   }
-}
+} 

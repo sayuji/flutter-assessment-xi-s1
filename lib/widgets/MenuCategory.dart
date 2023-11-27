@@ -16,9 +16,8 @@ class _MenuCategoryState extends State<MenuCategory> {
   String selectedIndex = 'All';
   final List<MyObject> items = [
     MyObject(text: "All", imagePath: 'image/Burger.jpeg'),
-    MyObject(text: "Promo", imagePath: 'image/Burger.jpeg'),
     MyObject(text: "Foods", imagePath: 'image/Burger.jpeg'),
-    MyObject(text: "Beverages", imagePath: 'image/Burger.jpeg'),
+    MyObject(text: "Beverages", imagePath: 'image/Cocacola.jpeg'),
   ];
 
   @override

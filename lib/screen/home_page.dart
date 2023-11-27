@@ -5,6 +5,8 @@ import 'package:starbhak_mart/screen/MenuPage.dart';
 import 'package:starbhak_mart/widgets/HomeAppBar.dart';
 import 'package:starbhak_mart/widgets/MenuCategory.dart';
 import 'package:starbhak_mart/widgets/MenuList.dart';
+import 'package:starbhak_mart/widgets/basket.dart';
+import 'package:starbhak_mart/widgets/date.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,22 +15,29 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage>  {
   int _currentIndex = 0;
-  final List<Widget> _pages = [
-      MenuPage(),
-      CartPage()
-    ];
+  void updateParentValue(int newValue) {
+    setState(() {
+      _currentIndex = newValue;
+    });
+  }
   
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _pages = [
+      MenuPage(),
+      Bskt(callback: updateParentValue),
+      Date(callback: updateParentValue)
+    ];
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Starbhak Mart",
       home: Scaffold(
-        backgroundColor: Colors.grey.shade200,
+        backgroundColor: Colors.grey.shade100,
         body: _pages[_currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.grey.shade200,
-          // color: Colors.blue,
+          index: _currentIndex,
+          backgroundColor: Colors.grey.shade100,
           animationDuration: Duration(milliseconds: 300),
           onTap: (index) {
             setState(() {

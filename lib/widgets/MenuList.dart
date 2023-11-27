@@ -21,7 +21,9 @@ class _MenuListState extends State<MenuList> {
     Product(name: "Pizza", price: 45000, imagePath: 'image/Pizza.jpeg'),
     Product(name: "Ramen", price: 30000, imagePath: 'image/Ramen.jpeg'),
     Product(name: "Steak", price: 40000, imagePath: 'image/Steak.jpeg'),
-    Product(name: "Steak", price: 40000, imagePath: 'image/Steak.jpeg'),
+    Product(name: "Sushi", price: 35000, imagePath: 'image/sushi.jpeg'),
+    Product(name: "Cocacola", price: 10000, imagePath: 'image/Cocacola.jpeg'),
+
   ];
 
   @override
@@ -61,7 +63,7 @@ class _MenuListState extends State<MenuList> {
                   borderRadius: BorderRadius.circular(25.0), // Border radius for the image
                   child: Image(
                     image: AssetImage(items[index].imagePath),
-                    height: 100,
+                    height: 90,
                     width: 100
                   ),
                 ),
@@ -74,8 +76,9 @@ class _MenuListState extends State<MenuList> {
                 Row(
                   children: [
                     Text("Rp. " + items[index].price.toString()),
-                    // IconButton(
-                    //   onPressed: (){}, icon: Icon(Icons.add_circle_outlined))
+                    Spacer(),
+                    IconButton(
+                      onPressed: (){}, icon: Icon(Icons.add_circle_outlined, color: Colors.green,))
                   ],
                 )
               ],
